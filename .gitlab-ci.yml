@@ -1,0 +1,32 @@
+cache:
+  paths:
+    - node_modules
+
+stages:
+  - dev
+  - build
+
+stage-dev:
+  stage: dev
+  script:
+    - yarn
+    - npm run build:common
+    - REF=`echo $CI_COMMIT_REF_NAME | sed 's/\//-/g'`
+    - VER=`npm version prerelease --preid=$REF-$CI_COMMIT_SHORT_SHA --git-tag-version=false`
+    - npm publish --tag beta
+    - xin ding-push build $VER
+  tags:
+    - xin-ui
+  only:
+    - web
+
+stage-build:
+  stage: build
+  script:
+    - yarn
+    - npm run build:common
+    - npm publish
+  tags:
+    - xin-ui
+  only:
+    - tags
