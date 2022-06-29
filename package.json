@@ -1,5 +1,5 @@
 {
-  "name": "xin-vant",
+  "name": "@xin/xin-vant",
   "version": "1.0.0",
   "types": "types/index.d.ts",
   "main": "lib/xin-vant.common.js",
