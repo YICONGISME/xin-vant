@@ -1,10 +1,10 @@
 import Vue from "vue";
 
-import {XinVtButton} from "./components/xin-vt-button";
+import {HttpClient} from "./components/http-client";
 
 
 export function install(vue: typeof Vue): void;
 
 export {
-    XinVtButton
+    HttpClient,
 }
