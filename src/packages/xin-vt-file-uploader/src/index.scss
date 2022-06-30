@@ -1,0 +1,74 @@
+.van-file-uploader{
+  .van-uploader{
+    display: none;
+  }
+  &__trigger{
+    .empty-trigger{
+      border: 1px dashed #16BF95;
+      border-radius: 4px;
+      padding: 0 24px 20px;
+      text-align: center;
+      .trigger-img {
+        width: 104px;
+        height: 56px;
+        margin: 21px auto 22px;
+      }
+      .trigger-desc {
+        margin-top: 8px;
+        text-align: left;
+        color: #999999;
+        font-size: 12px;
+        line-height: 20px;
+        word-break: break-all;
+        padding-left: 12px;
+        text-indent: -12px;
+      }
+    }
+
+    .title-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      .file-num{
+        .num{
+          font-family: D-DIN;
+        }
+      }
+    }
+  }
+
+  &__list{
+    .file-list-item{
+      height: 67px;
+      border-top: 1px solid #F8F8F8;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      &:first-child{
+        border-top:none;
+      }
+      .file-info {
+        width: calc(100% - 52px);
+        .file-name {
+          flex:1;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: 280px;
+        }
+        .file-progress{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .van-progress{
+            flex: 1;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+
+
+}
