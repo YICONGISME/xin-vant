@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import {HttpClient} from "./http-client/http-client";
+import {HttpClient} from "./xin-vt-http-client/http-client";
 
 import XinVtDynamicForm from "./xin-vt-dynamic-form/index";
 import XinVtFileUploader from "./xin-vt-file-uploader/index";
