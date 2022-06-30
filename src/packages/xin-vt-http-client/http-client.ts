@@ -17,14 +17,13 @@ export class HttpClient {
 
   /**
    * 构建函数
-   * 获取token并添加到header
    * 支持传入自定义AxiosRequestConfig
    * @param options
    */
   constructor(options?: HttpClientOptions) {
     const axiosInstance = Axios.create(options && options.config);
-    axiosInstance.interceptors.request.use(
-      config => {
+    axiosInstance.interceptors.request.use(config => {
+        config.headers['Accept'] = '*/*';
         const data = config.params || config.data || {};
         if (config.method === 'get') {
           config['params'] = data;
