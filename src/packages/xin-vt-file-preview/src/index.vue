@@ -12,6 +12,7 @@
 
 <script lang="ts">
 import {Component, Vue, Ref, Prop} from "vue-property-decorator";
+import {XinVantService} from "src/packages/utils/xin-vant-service";
 
 //@ts-ignore
 const vant = window.vant;
@@ -25,8 +26,9 @@ export default class XinVtFilePreview extends Vue{
   @Ref('') readonly filePreviewRef!: any
   @Ref('') readonly closePreviewBtn!: any
 
-  @Prop({default: () => []})
-  file!: any
+  //预览接口
+  @Prop({default: '/recruitment/service/ajax-preview-v2file'})
+  previewUrl!: string
 
   previewData = null;
   isShow = false;
@@ -67,11 +69,10 @@ export default class XinVtFilePreview extends Vue{
     let targetOrigin = PREVIEW_ORIGIN;
     // 轮询成功之后的打开预览
     const successPreviewCb = (preFile: any) => {
-      Vue.httpClient.request({
-        url: '/recruitment/service/ajax-preview-v2file',
-        method: 'post',
-        data: { key: preFile.pdfKey || preFile.key }
-      }).then((res: any)=>{
+      XinVantService.post(
+        this.previewUrl,
+        { key: preFile.pdfKey || preFile.key }
+      ).then((res: any)=>{
         if(!res.status){
           vant.Toast(res.message)
           return
