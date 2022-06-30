@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import {Component, Vue, Ref, Prop} from "vue-property-decorator";
-import {XinVantService} from "src/packages/utils/xin-vant-service";
+import {XinVantService} from "src/utils/xin-vant-service";
 
 //@ts-ignore
 const vant = window.vant;
