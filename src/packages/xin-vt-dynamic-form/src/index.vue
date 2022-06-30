@@ -21,7 +21,7 @@ import ImgField from "./components/img-field.vue";
 import FileField from "./components/file-field.vue";
 
 import {TFieldItem} from "./index.types";
-// import {VanBaseVerify, VanNumberVerify, VanStringVerify} from "@/module/external/utils/van-form-validator";
+import XinVtValidator from "../../xin-vt-validator";
 
 @Component({
   name: 'XinVtDynamicForm',
@@ -59,42 +59,43 @@ export default class XinVtDynamicForm extends Vue{
 
 
   setFieldRule(){
-    // let rules: any[] = this.newField.rules;
-    // //必填
-    // if (this.newField.required) {
-    //   rules.unshift(...VanBaseVerify.vRequired());
-    // }
-    // const {maxlength, decimalDigits} = this.newField;
-    //
-    // if (maxlength) {
-    //   if (['InputField','TextareaField'].includes(this.newField.type)) {
-    //     rules = rules.concat(VanStringVerify.vTextNum({
-    //       min: 0,
-    //       max: maxlength
-    //     }))
-    //   }
-    // }
-    //
-    // if(['NumberField'].includes(this.newField.type)){
-    //   if (decimalDigits === 0) {
-    //     rules = rules.concat(VanNumberVerify.vNumIntRangeCustom({ minVal: 0, maxVal: 100000000 }))
-    //   } else {
-    //     rules = rules.concat(VanNumberVerify.vCustomFloatNumRange({bit: decimalDigits}))
-    //   }
-    // }
-    //
-    // //文件和图片上传
-    // if (['ImgField', 'FileField'].includes(this.field.type)) {
-    //   const validates = {
-    //     message: '正在上传中',
-    //     validator: (val: any) => {
-    //       return this.field.hasUploading;
-    //     }
-    //   }
-    //   rules = rules.concat(validates);
-    // }
-    //
-    // return rules;
+    const {VanBaseVerify, VanStringVerify, VanNumberVerify } = XinVtValidator;
+    let rules: any[] = this.newField.rules;
+    //必填
+    if (this.newField.required) {
+      rules.unshift(...VanBaseVerify.vRequired());
+    }
+    const {maxlength, decimalDigits} = this.newField;
+
+    if (maxlength) {
+      if (['InputField','TextareaField'].includes(this.newField.type)) {
+        rules = rules.concat(VanStringVerify.vTextNum({
+          min: 0,
+          max: maxlength
+        }))
+      }
+    }
+
+    if(['NumberField'].includes(this.newField.type)){
+      if (decimalDigits === 0) {
+        rules = rules.concat(VanNumberVerify.vNumIntRangeCustom({ minVal: 0, maxVal: 100000000 }))
+      } else {
+        rules = rules.concat(VanNumberVerify.vCustomFloatNumRange({bit: decimalDigits}))
+      }
+    }
+
+    //文件和图片上传
+    if (['ImgField', 'FileField'].includes(this.field.type)) {
+      const validates = {
+        message: '正在上传中',
+        validator: (val: any) => {
+          return this.field.hasUploading;
+        }
+      }
+      rules = rules.concat(validates);
+    }
+
+    return rules;
   }
 
 
