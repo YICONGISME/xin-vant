@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import {HttpClient} from "./xin-vt-http-client/http-client";
+import XinVtValidator from "./xin-vt-validator/index";
 
 import XinVtDynamicForm from "./xin-vt-dynamic-form/index";
 import XinVtFileUploader from "./xin-vt-file-uploader/index";
@@ -42,6 +43,7 @@ if (typeof window !== 'undefined' && window.Vue && !process.env.BUILD_TYPE) {
 export {
     install,
     HttpClient,
+    XinVtValidator,
     XinVtDynamicForm,
     XinVtFileUploader,
     XinVtFilePreview,
