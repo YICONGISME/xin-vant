@@ -1,8 +1,18 @@
 import Vue from 'vue';
-import XinVtButton from "./xin-vt-button/index";
+import {HttpClient} from "./http-client/http-client";
+
+import XinVtDynamicForm from "./xin-vt-dynamic-form/index";
+import XinVtFileUploader from "./xin-vt-file-uploader/index";
+import XinVtFilePreview from "./xin-vt-file-preview/index";
+import XinVtFileList from "./xin-vt-file-list/index";
+import XinVtImgUploader from "./xin-vt-img-uploader/index";
 
 const components = [
-    XinVtButton
+    XinVtDynamicForm,
+    XinVtFileUploader,
+    XinVtFilePreview,
+    XinVtFileList,
+    XinVtImgUploader,
 ];
 
 //组件统一加上install方法
@@ -31,6 +41,11 @@ if (typeof window !== 'undefined' && window.Vue && !process.env.BUILD_TYPE) {
 
 export {
     install,
-    XinVtButton
+    HttpClient,
+    XinVtDynamicForm,
+    XinVtFileUploader,
+    XinVtFilePreview,
+    XinVtFileList,
+    XinVtImgUploader,
 };
 //@ts-ignore
