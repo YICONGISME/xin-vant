@@ -50,3 +50,19 @@ $ npm publish
 $ npm run yalc:push
 ```
 
+
+### 组件
+
+组件名|功能
+---|---
+XinVtDynamicForm| 动态生成表单组件
+XinVtFileUploader| 文件上传组件
+XinVtFilePreview| 文件预览组件
+XinVtFileList| 文件列表组件
+XinVtImgUploader| 图片上传组件
+
+
+### 工具
+
+- XinVtValidator 校验库
+- HttpClient 接口请求类

@@ -8,8 +8,6 @@
     "minor": "npm version minor -m \"Upgrade to %s\" && git push && git push --tags",
     "major": "npm version major -m \"Upgrade to %s\" && git push && git push --tags",
     "lint": "vue-cli-service lint",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
     "build:common": "webpack --config ./webpack.config.js",
     "yalc:push": "npm run build:common && yalc push"
   },
@@ -20,9 +18,9 @@
   },
   "author": "kongyicong <kongyicong@qijiayoudao.com>",
   "dependencies": {
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "axios": "^0.20.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -47,7 +45,6 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "@xin/xin-core": "^1.0.45",
     "@xin/xin-ui": "2.0.36",
-    "axios": "^0.24.0",
     "babel-loader": "^8.2.4",
     "core-js": "^3.6.5",
     "cropperjs": "^1.4.3",
