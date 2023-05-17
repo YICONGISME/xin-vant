@@ -13,7 +13,7 @@
   },
   "description": "基于Vant的移动端组件库",
   "repository": {
-    "type": "git",
+    "type": "git"
   },
   "author": "kongyicong",
   "dependencies": {
