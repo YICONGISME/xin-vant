@@ -60,5 +60,3 @@ XinVtImgUploader| 图片上传组件
 - XinVtValidator 校验库
 - HttpClient 接口请求类
 
-
-test
