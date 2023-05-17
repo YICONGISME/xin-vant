@@ -12,7 +12,6 @@
     <!-- 触发上传 -->
     <div class="van-file-uploader__trigger" v-if="!disabled">
       <div class="empty-trigger" v-if="files.length === 0" @click="openUpload">
-        <img class='trigger-img' src='https://static.xinrenxinshi.com/smart/upload/file_upload.png'/>
         <div class="trigger-desc">1. 支持 {{fileTypesText}} 格式文件</div>
         <div class="trigger-desc">2. 最多上传 {{maxNum}} 个，单个文件不得超过 {{maxSize}} MB</div>
       </div>

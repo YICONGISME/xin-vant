@@ -16,7 +16,7 @@ import {XinVantService} from "src/utils/xin-vant-service";
 
 //@ts-ignore
 const vant = window.vant;
-const PREVIEW_ORIGIN = 'https://static.xinrenxinshi.com/pdfpreview/preview_v2.html'
+const PREVIEW_ORIGIN = 'https://.com/pdfpreview/preview_v2.html'
 
 @Component({
   name: 'XinVtFilePreview',
@@ -27,7 +27,7 @@ export default class XinVtFilePreview extends Vue{
   @Ref('') readonly closePreviewBtn!: any
 
   //预览接口
-  @Prop({default: '/recruitment/service/ajax-preview-v2file'})
+  @Prop({default: '/ajax-preview-v2file'})
   previewUrl!: string
 
   previewData = null;

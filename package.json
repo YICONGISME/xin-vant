@@ -1,5 +1,5 @@
 {
-  "name": "@xin/xin-vant",
+  "name": "xin-vant",
   "version": "1.0.0",
   "types": "types/index.d.ts",
   "main": "lib/xin-vant.common.js",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git@code.qijiayoudao.net:xin-ui/xin-vant.git"
   },
-  "author": "kongyicong <kongyicong@qijiayoudao.com>",
+  "author": "kongyicong",
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",

@@ -7,20 +7,13 @@
 - yarn
 
 ```bash
-$ yarn config set "@xin:registry" "http://39.107.47.200"
-$ yarn add @xin/xin-vant
+$ yarn add xin-vant
 ```
 
 ## 开发
 
 
 ### 发布
-
-- 登陆
-
-```bash
-$ npm login --scope=@xin --registry=http://39.107.47.200
-```
 
 - 版本号
 

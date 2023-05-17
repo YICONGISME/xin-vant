@@ -78,7 +78,7 @@ export default class CityField extends Vue{
   }
 
   handlerGetCity(){
-    this.$http.get('/support/ajax-get-area-tree').then((reply: any) =>{
+    this.$http.get('ajax-get-area-tree').then((reply: any) =>{
       const res: any = reply.data;
       if(!res.status) return
       this.handlerFormatCityData(res.data)
