@@ -14,7 +14,6 @@
   "description": "基于Vant的移动端组件库",
   "repository": {
     "type": "git",
-    "url": "git@code.qijiayoudao.net:xin-ui/xin-vant.git"
   },
   "author": "kongyicong",
   "dependencies": {
